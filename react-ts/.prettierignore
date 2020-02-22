@@ -1,0 +1,17 @@
+## OS
+.DS_Store
+.idea
+.editorconfig
+package-lock.json
+
+# Ignored suffix
+*.log
+*.md
+*.svg
+*.png
+*ignore
+
+
+## Built-files
+.cache
+dist

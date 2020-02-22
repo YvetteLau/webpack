@@ -1,0 +1,25 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": "> 0.25%, not dead"
+                
+            }
+        ],
+        "@babel/preset-typescript",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        [
+            "@babel/transform-runtime",
+            {
+                "corejs": 3
+            }
+        ],
+        ["@babel/plugin-proposal-optional-chaining", { "loose" : true }],
+        ["@babel/plugin-proposal-decorators", { "legacy": true }], //decorator
+        ["@babel/plugin-proposal-class-properties", { "loose" : true }],
+        "@babel/plugin-transform-modules-commonjs" //Uncaught ReferenceError: exports is not defined
+    ]
+}
