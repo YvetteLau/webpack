@@ -1,4 +1,4 @@
-const login = 'login';
-console.log(login);
+export default function login() {
+    console.log('login');
+}
 
-export default login;

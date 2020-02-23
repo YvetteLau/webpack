@@ -1,20 +1,13 @@
-import './index.less';
-import hot from './hot';
-class Animal {
-    constructor(name) {
-        this.name = name;
-    }
-    getName() {
-        return this.name;
-    }
+import A from './a';
+import './less/main/index.css';
+
+A();
+
+document.getElementById('btn').onclick = function() {
+    import('./handle').then(fn => fn.default());
 }
 
-const dog = new Animal('dog');
-console.log('wwwwwww');
-console.log(hot);
-document.getElementById('img').onclick = function() {
-    import('./a').then(fn => fn.default());
-}
-if(module && module.hot) {
-    module.hot.accept()
-}
+fetch("/api/user")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));

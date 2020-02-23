@@ -1,0 +1,7 @@
+body{
+    background: url('../../imgs/thor.jpeg') no-repeat;
+    transition: all 2s;
+}
+::placeholder {
+    color: gray;
+}

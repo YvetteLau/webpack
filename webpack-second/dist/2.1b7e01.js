@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{35:function(o,e,n){"use strict";n(10)(e,"__esModule",{value:!0}),e.default=function(){console.log("hello")}}}]);
