@@ -90,7 +90,8 @@ const config = {
             use: [{
                 loader: 'url-loader',
                 options: {
-                    limit: 10240 //10K
+                    limit: 10240, //10K
+                    esModule: false
                 }
             }],
         }),
