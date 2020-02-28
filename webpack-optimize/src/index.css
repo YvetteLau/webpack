@@ -13,4 +13,5 @@ body {
 
 div{
   transition: all 2s;
+  flex-direction: column;
 }

@@ -4,7 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Happypack = require('happypack');
+// const TerserPlugin = require('terser-webpack-plugin');
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const config = {
     entry: "./src/index.js",
     output: {
@@ -34,7 +36,13 @@ const config = {
         },
         runtimeChunk: {
             name: 'mainifest'
-        }
+        },
+        // minimize: true,
+        // minimizer: [
+        //     new TerserPlugin({
+        //         test: /\.js(\?.*)?$/i,
+        //     }),
+        // ],
     },
     externals: {
         'jquery': 'jQuery'
@@ -75,7 +83,7 @@ const config = {
         }),
         new Happypack({
             id: 'css',//和rule中的id=css对应
-            use: ['style-loader', 'css-loader','postcss-loader'],
+            use: ['style-loader', 'css-loader', 'postcss-loader'],
         }),
         new Happypack({
             id: 'file', //和rule中的id=file对应
@@ -97,7 +105,8 @@ const config = {
             manifest: require(path.resolve(__dirname, 'dist', 'dll', 'manifest.json'))
         }),
 
-        new webpack.IgnorePlugin(/\.\/locale/, /moment/)
+        new webpack.IgnorePlugin(/\.\/locale/, /moment/),
+        new HardSourceWebpackPlugin()
     ]
 }
 
