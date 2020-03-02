@@ -18,6 +18,7 @@ console.log($('div'));
 ReactDOM.render(
     <Provider store={store}>
         <App />
+        <img src={require('./imgs/alita.jpg')} />
         {/* <DatePicker defaultValue={moment('2020-02-02', 'YYYY-MM-DD')} /> */}
     </Provider>,
     document.getElementById('root')

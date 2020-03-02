@@ -3,6 +3,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const config = require('./public/config')[isDev ? 'dev' : 'build'];
+console.log(config)
 module.exports = {
     mode: isDev ? 'development' : 'production',
     entry: './src/index.js',
@@ -32,10 +33,10 @@ module.exports = {
                 }, 'less-loader'],
                 exclude: /node_modules/
             },
-            {
-                test: /.html$/,
-                use: 'html-withimg-loader'
-            },
+            // {
+            //     test: /.html$/,
+            //     use: 'html-withimg-loader'
+            // },
             {
                 test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
                 use: [
