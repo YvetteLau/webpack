@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{34:function(o,e,n){"use strict";n(10)(e,"__esModule",{value:!0}),e.default=function(){console.log("hello")}}}]);
+//# sourceMappingURL=2.f85616.js.map

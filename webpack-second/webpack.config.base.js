@@ -1,11 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development'
-const config = require('./public/config')[isDev ? 'dev' : 'build'];
 const path = require('path');
 const apiMocker = require('mocker-api');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const config = require('./public/config')[isDev ? 'dev' : 'build'];
+
 
 module.exports = {
     entry: {
@@ -18,7 +21,7 @@ module.exports = {
         publicPath: '/'
     },
     mode: 'development',
-    devtool: 'none',
+    devtool: 'source-map',
     devServer: {
         port: '3000',
         hot: true,
@@ -117,6 +120,21 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'css/main.css',
             // chunkFilename: '[id].css'
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: 'public/js/*.js',
+                to: path.resolve(__dirname, 'dist', 'js'),
+                flatten: true,
+            }
+        ], {
+            ignore: ['other.js']
+        }),
+        new webpack.ProvidePlugin({
+            _map: ['lodash', 'map'],
+            Vue: ['vue/dist/vue.esm.js', 'default'],
+            $: 'jquery',
+            React: 'react'
         })
     ]
 }
