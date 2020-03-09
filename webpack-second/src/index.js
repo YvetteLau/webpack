@@ -1,8 +1,8 @@
 import A from './a';
-import './less/main/index.css';
+import './css/main/index.css';
 
 A();
-
+console.log(DEV)
 document.getElementById('btn').onclick = function() {
     import('./handle').then(fn => fn.default());
 }
@@ -13,3 +13,7 @@ fetch("/api/user")
     .catch(err => console.log(err));
 
 console.log($, _map)
+
+$('#login').click(function() {
+    location.href = '/login.html';
+});

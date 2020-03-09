@@ -1,5 +1,5 @@
-import './less/main/base.css';
+import './css/main/base.css';
 
 export default function A() {
-    console.log('aaa')
+    console.log('bbbb')
 }
