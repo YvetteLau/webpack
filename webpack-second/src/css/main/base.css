@@ -1,4 +1,6 @@
 div {
     color: green;
     font-size: 20px;
+    height: 200px;
+    background: url('../../imgs/alita.jpg') no-repeat;
 }
