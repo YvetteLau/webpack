@@ -15,7 +15,7 @@
     "@babel/runtime-corejs3": "^7.8.4",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
-    "mocker-api": "^1.12.2",
+    "mocker-api": "^2.9.5",
     "react": "^16.13.0",
     "vue": "^2.6.11",
     "webpack": "^4.41.6",
